@@ -1,14 +1,28 @@
 package ru.ngs.summerjob.register.domain;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Table(name = "ro_office")
+@Entity
 public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
     private Long personId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String LastName;
+    @Column(name = "patronymic")
     private String Patronymic;
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY,                 //ratio
+            mappedBy = "person")                                                        //ссылается по переменной класса Passport
     private List<Passport> passports;
 
     public Long getPersonId() {
