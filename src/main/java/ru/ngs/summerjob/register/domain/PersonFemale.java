@@ -1,9 +1,14 @@
 package ru.ngs.summerjob.register.domain;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
 import java.util.List;
 
+@Entity
+@DiscriminatorValue("1")
 public class PersonFemale extends Person {
-
+/*
     private List<MarriageCertificate> marriageCertificates;
     private List<BirthCertificate> birthCertificates;
 
@@ -21,5 +26,5 @@ public class PersonFemale extends Person {
 
     public void setBirthCertificates(List<BirthCertificate> birthCertificates) {
         this.birthCertificates = birthCertificates;
-    }
+    }*/
 }

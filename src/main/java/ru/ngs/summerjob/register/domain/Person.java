@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Table(name = "ro_office")
+@Table(name = "ro_person")
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "sex", discriminatorType = DiscriminatorType.INTEGER)
 public class Person {
 
     @Id
