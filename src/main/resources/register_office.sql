@@ -56,7 +56,7 @@ VALUES (1, 'Elena', 'Kasatkina', 'Sergeevna', '1998-03-24'),
 (1, 'Nikolai', 'Kasatkin', 'Oleg', '2018-10-21');
 
 INSERT INTO ro_passport (person_id, series, number, issue_date, issue_department)
-VALUES (1, 'HB', '123456', '2018-11-02', 'Petrovskoye ROVD');
+VALUES (2, 'HB', '123456', '2018-11-02', 'Petrovskoye ROVD');
 
 INSERT INTO ro_birth_certificate (number_certificate, date_issue, person_id, father_id, mother_id)
 VALUES ('123 Birth', '2018-10-22', 3, 2, 1);

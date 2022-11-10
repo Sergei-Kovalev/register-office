@@ -9,6 +9,16 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "sex", discriminatorType = DiscriminatorType.INTEGER)
+
+@NamedQueries({
+        @NamedQuery(name = "Person.findPersons", query = """
+                Select p FROM Person p\040
+                LEFT JOIN FETCH p.passports ps\040
+                LEFT JOIN FETCH p.birthCertificate bs\040
+                WHERE p.personId = :personId
+                """) //можно переменные сразу называть в коде - вводить при применении запроса - см. PersonDao.java
+})
+
 public class Person {
 
     @Id
