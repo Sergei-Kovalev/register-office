@@ -1,14 +1,22 @@
 package ru.ngs.summerjob.register.buisness;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.ngs.summerjob.register.dao.MarriageDao;
+import ru.ngs.summerjob.register.domain.MarriageCertificate;
 import ru.ngs.summerjob.register.view.MarriageRequest;
 import ru.ngs.summerjob.register.view.MarriageResponse;
 
 public class MarriageManager {
 
-    private MarriageDao dao;
+    private final static Logger LOGGER = LoggerFactory.getLogger(MarriageManager.class);
+
+    private MarriageDao marriageDao;
 
     public MarriageResponse findMarriageCertificate(MarriageRequest request) {
-        throw new UnsupportedOperationException("Unsupported");
+        LOGGER.info("findMarriageCertificate() called");
+        MarriageCertificate certificate = marriageDao.findMarriageCertificate(request);
+
+        return new MarriageResponse();
     }
 }
