@@ -9,8 +9,10 @@ import org.slf4j.LoggerFactory;
 import ru.ngs.summerjob.register.domain.MarriageCertificate;
 import ru.ngs.summerjob.register.view.MarriageRequest;
 
+import java.util.List;
+
 public class MarriageDao {
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     public MarriageDao() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistence");
@@ -24,7 +26,15 @@ public class MarriageDao {
         LOGGER.info("findMarriageCertificate() called");
 
         Query query = entityManager.createQuery("MarriageCertificate.findMarriageCertificate");
-        query.setParameter();
-        return new MarriageCertificate();
+        query.setParameter("marriageCertificateNumber", request.getMarriageCertificateNumber());
+        query.setParameter("marriageCertificateDate", request.getMarriageCertificateDate());
+        query.setParameter("husbandSurname", request.getHusbandSurname());
+        query.setParameter("husbandGivenName", request.getHusbandGivenName());
+        query.setParameter("husbandPatronymic", request.getHusbandPatronymic());
+        query.setParameter("wifeSurname", request.getWifeSurname());
+        query.setParameter("wifeGivenName", request.getWifeGivenName());
+        query.setParameter("wifePatronymic", request.getWifePatronymic());
+        List<MarriageCertificate> resultList = query.getResultList();
+        return resultList.get(0);
     }
 }

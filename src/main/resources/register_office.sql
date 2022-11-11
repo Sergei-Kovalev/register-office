@@ -60,3 +60,6 @@ VALUES (2, 'HB', '123456', '2018-11-02', 'Petrovskoye ROVD');
 
 INSERT INTO ro_birth_certificate (number_certificate, date_issue, person_id, father_id, mother_id)
 VALUES ('123 Birth', '2018-10-22', 3, 2, 1);
+
+INSERT INTO ro_marriage_certificate (number_certificate, date_issue, husband_id, wife_id, active, end_date)
+VALUES ('321 Marriage', '2017-01-01', 2, 1, true, '2030-01-01');
