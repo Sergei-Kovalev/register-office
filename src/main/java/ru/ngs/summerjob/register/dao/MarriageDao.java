@@ -12,19 +12,27 @@ import ru.ngs.summerjob.register.view.MarriageRequest;
 import java.util.List;
 
 public class MarriageDao {
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
+
+    private String test;
+
+    public void setTest(String test) {
+        this.test = test;
+    }
+/*
 
     public MarriageDao() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistence");
         entityManager = factory.createEntityManager();
     }
+*/
 
     private final static Logger LOGGER = LoggerFactory.getLogger(MarriageDao.class);
 
     public MarriageCertificate findMarriageCertificate(MarriageRequest request) {
 
-        LOGGER.info("findMarriageCertificate() called");
-
+        LOGGER.info("findMarriageCertificate() called: {}", test);
+/*
         Query query = entityManager.createQuery("MarriageCertificate.findMarriageCertificate");
         query.setParameter("marriageCertificateNumber", request.getMarriageCertificateNumber());
         query.setParameter("marriageCertificateDate", request.getMarriageCertificateDate());
@@ -34,7 +42,7 @@ public class MarriageDao {
         query.setParameter("wifeSurname", request.getWifeSurname());
         query.setParameter("wifeGivenName", request.getWifeGivenName());
         query.setParameter("wifePatronymic", request.getWifePatronymic());
-        List<MarriageCertificate> resultList = query.getResultList();
-        return resultList.get(0);
+        List<MarriageCertificate> resultList = query.getResultList();*/
+        return null;
     }
 }

@@ -13,6 +13,10 @@ public class MarriageManager {
 
     private MarriageDao marriageDao;
 
+    public void setMarriageDao(MarriageDao marriageDao) {
+        this.marriageDao = marriageDao;
+    }
+
     public MarriageResponse findMarriageCertificate(MarriageRequest request) {
         LOGGER.info("findMarriageCertificate() called");
         MarriageCertificate certificate = marriageDao.findMarriageCertificate(request);
