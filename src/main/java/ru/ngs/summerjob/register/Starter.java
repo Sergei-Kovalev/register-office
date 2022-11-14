@@ -13,7 +13,8 @@ public class Starter {
           new String[]{"springContext.xml"}
         );
 
-        MarriageController controller = context.getBean("controller", MarriageController.class);
+        MarriageController controller = context.getBean(MarriageController.class);                      //можно не использовать имя так как класс ток 1
+//        MarriageController controller = context.getBean("controller", MarriageController.class);      //удобно если это интерфейс с несколькими имплементациями
         controller.findMarriageCertificate(new MarriageRequest());
     }
 }

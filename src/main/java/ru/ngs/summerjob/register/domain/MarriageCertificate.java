@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 @Table(name = "ro_marriage_certificate")
 @Entity
+/*
 
 @NamedQueries({
         @NamedQuery(name = "MarriageCertificate.findMarriageCertificate", query = """
@@ -22,6 +23,7 @@ import java.time.LocalDate;
                 AND wi.patronymic = :wifePatronymic
                 """)
 })
+*/
 
 public class MarriageCertificate {
     @Id

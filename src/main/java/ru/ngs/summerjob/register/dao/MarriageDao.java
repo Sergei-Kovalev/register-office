@@ -1,19 +1,19 @@
 package ru.ngs.summerjob.register.dao;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import ru.ngs.summerjob.register.domain.MarriageCertificate;
 import ru.ngs.summerjob.register.view.MarriageRequest;
 
-import java.util.List;
 
+@Component
 public class MarriageDao {
     private EntityManager entityManager;
 
+    @Value("${test.value}")
     private String test;
 
     public void setTest(String test) {
